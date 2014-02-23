@@ -215,3 +215,32 @@ body {
     padding-bottom: 0 !important;
     padding-top: 0 !important;
 }
+/**************** Pop up *************************/
+div#controls a {
+	list-style:none;
+	float:left;
+	background:url("../img/buttons.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+/*	box-shadow:1px 1px 2px  #333;*/
+	border-radius:1px;
+	padding:10px 40px;
+	text-decoration:none;
+	text-align:center;
+}
+div#controls a.btn-view {
+	border-right: 1px solid #B4B4B4;
+}
+
+div#controls a:hover {
+	background:#fff;
+}
+
+div#controls {
+	margin-top:0px;
+	left: 0;
+	border:1px;
+    position: fixed;
+	bottom:0px;
+    width: 100%;
+	background:url("../img/buttons.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	box-shadow:1px 1px 2px  #333;
+}
