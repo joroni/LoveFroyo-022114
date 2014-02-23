@@ -48,6 +48,7 @@ ul#main-menu, ul, menu, dir  {
     padding: 0 !important;
 }
 
+
 ul#main-menu li.menu-leaf {
 /*border-left: 1px solid #333;
 border-right: 1px solid #961351;
@@ -204,3 +205,12 @@ body {
 		background-position:center;
 		margin:-100px 0 0 -100px; /* is width and height divided by two */
 	}
+
+
+/********************* LOGIN *********************/
+#login_pass_wrapper, #login_name_wrapper {
+    margin-bottom: 0 !important;
+    margin-top: -5px !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}

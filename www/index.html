@@ -121,11 +121,11 @@
 	  <script>
 	  shareViaTwitter('My message');
  
-//shareViaFacebook('Message via Facebook',
-  //               null,
-      //           null,
-    //             console.log('share ok'), // success callback
-        //         function(errormsg){alert(errormsg)}) // error callback
+shareViaFacebook('Message via Facebook',
+               null,
+           null,
+             console.log('share ok'), // success callback
+         function(errormsg){alert(errormsg)}) // error callback
  
 /*shareVia('com.apple.social.sinaweibo' // for options, see the repo
          'Message via Weibo on iOS',
@@ -135,7 +135,7 @@
         /* function(errormsg){alert(errormsg)})*/ // error callback
 	 
 	</script>
-    <script>
+      <script>
 	var data = {
   // currently required
   "name": "Love Froyo Share",
@@ -143,12 +143,12 @@
   "icon32URL": baseurl+"/firefox32.png",
   "icon64URL": baseurl+"/firefox64.png",
 
-  "shareURL": baseurl+"/share.html?url=%{url}",
+  "shareURL": baseurl+"javascript-application"+"/share.html?url=%{url}",
 
   // should be available for display purposes
   "description": "Fat-free Fresh Frozen Yogurt designed by you. Served in 30 seconds in an 8 oz. paper cup. Choose from 2 fro-yo flavors (+ the twist) and 6 toppings. Perfect for high schools, corporate offices, colleges, hospitals. Takes only 24 square feet!",
   "author": "Reis and Irvy's, Love Froyo",
-  "homepageURL": "http://reisandirvys.com/",
+  "homepageURL": "http://m.reisandirvys.com/",
 
   // optional
   "version": "1.0"
@@ -226,8 +226,6 @@
 					 $('#login').show('slow');
 					  $('#logout').hide();
                     if (result.user.uid != 0) {
-					
-					
 					$('#login_name_wrapper').hide();
                     $('#login_pass_wrapper').hide();
 					$('#footer').show('slow');
@@ -240,6 +238,7 @@
 					if (result.user.uid == 0) {
 					$('#login').show('slow');
 					$('#logout').hide();
+					$('#footer').hide();
                        
                       }
                       /*else {
@@ -403,19 +402,19 @@
       
 
      
-      <div id="main-menu-holder" >
+     <div id="main-menu-holder" >
      <ul id="main-menu">
     <li class="menu-leaf">
-      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><img src="img/lf-btn-social.jpg"></a>
+      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><img src="img/lf-btn-social.jpg" width="80"></a>
      </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg"></a>
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg" width="80"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg"></a>
+       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg" width="80"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg"></a>
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg" width="80"></a>
       </li>
 
       </ul>
@@ -487,21 +486,19 @@
       
 
 
-      <div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
+      <div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e" style="display:none;">
       
-   <div id="main-menu-holder" >
+  <div id="main-menu-holder" >
      <ul id="main-menu">
-    <li class="menu-leaf">
-      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><img src="img/lf-btn-social.jpg"></a>
-     </li>
+    <li class="menu-leaf"><a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><a href="#wform" onClick="listSocial();" id="btn-social2"  data-role="button"><a href="#wform" onClick="listSocial();" id="btn-social3"  data-role="button"></a><a href="#wform" onClick="listSocial();" id="btn-social4"  data-role="button"><img src="img/lf-btn-social.jpg" width="80"></a></a></a></li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg"></a>
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg" width="80"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg"></a>
+       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg" width="80"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg"></a>
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg" width="80"></a>
       </li>
 
       </ul>
