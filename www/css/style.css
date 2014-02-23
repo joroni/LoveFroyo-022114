@@ -33,7 +33,7 @@ ul#btn-list-header li.ui-btn-inner, ul#btn-list-footer li.ui-btn-inner {
 
 iframe {
 	border-radius:5px;
-	border-style:none !important;
+	border-style:none;
 }
 
 div#main-menu-holder {
