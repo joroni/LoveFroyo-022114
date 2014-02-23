@@ -34,14 +34,18 @@ ul#btn-list-header li.ui-btn-inner, ul#btn-list-footer li.ui-btn-inner {
 iframe {
 	border-radius:5px;
 }
+
 div#main-menu-holder {
-	position:absolute;
-	width:100%;
-	
+    left: -2px;
+    padding: 0 !important;
+    position: absolute;
+    top: -6px;
+    width: 100%;
 }
 
 ul#main-menu, ul, menu, dir  {
-	padding:0;
+	    margin: 0 auto;
+    padding: 0 !important;
 }
 
 ul#main-menu li.menu-leaf {
@@ -55,7 +59,7 @@ border-bottom: 1px solid #d27ea6;
     float: left;
     height: 80px;
     list-style: none outside none;
-    margin-top: -23px;
+    margin-top: -1px;
     width: 80px;
 	
 
@@ -151,6 +155,7 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
     position: fixed !important;
     text-shadow: 0 1px 1px #333333;
     width: 100%;
+	overflow:hidden;
     z-index: 1000;
 }
 
