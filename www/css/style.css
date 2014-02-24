@@ -239,13 +239,17 @@ btn#social_share {
 	position: fixed;
 	top:200px;
 }
-
-button#go.ui-btn {
-    background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #FB00F4;
+button#go.style1 {
+    /*background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #FB00F4;*/
     box-shadow: 0 2px 3px #333333;
     color: #FFFFFF;
     font-weight: 300;
+    
+	
+	 background: none repeat scroll 0 0 #D9009B;
+    border-color: #FB00F4;
+    color: #FFFFFF;
     text-shadow: 1px -1px 1px #333333;
 }
 /************ Preloadme **********************/
@@ -431,12 +435,12 @@ div#controls {
         padding: 20px 0;
       }
 	  
-	    .style1 {
+	/*    .style1 {
     	width:100% !important;
 	  color: rgba(255, 255, 255, 0.8) !important;
    
    text-shadow: 1px 1px 1px #D9009B, 0 0 1px #FFFFFF, 1px -1px 1px #000000;
-}
+}*/
 
 	  .style2 {
      /* color: rgba(56, 61, 80, 0.8) !important;*/
