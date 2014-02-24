@@ -454,16 +454,24 @@ shareViaFacebook('Message via Facebook',
         
      
  
-      <div id="navigation">
+       <div id="navigation">
       <!--<button id="social_share" onclick="window.plugins.socialsharing.share('My message')">share!</button>-->
       <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-notext">Share</a>
-      <a href="#popupWin" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext">Comments</a>
-<div data-role="popup" id="popupWin" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-<!--    <iframe src="http://m.reisandirvys.com/comment/reply/3/11#edit-comment-body" seamless height="250" width="290"></iframe>-->
-    <iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300"></iframe>
-</div><!-- /navigation -->
+      <a id="social-comments" href="#popupWin1" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300"></iframe>
+
+   <!-- /navigation -->
 
 
+    
+</div><!-- /popWin1 -->
+
+<a id="shout-comments" href="#popupWin2" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+
+<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"></iframe>
+</div><!-- /popWin2 -->
     
 <!--<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-right ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all" data-transition="pop" style="width:150px;">Comment</a>
     <div id="comment_link"></div> 
