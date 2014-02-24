@@ -203,7 +203,8 @@ html, body.ui-mobile-viewport, div.ui-mobile-viewport,
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit,
 ui-panel-dismiss-open.ui-panel-dismiss-position-left, .ui-panel-dismiss-open, ui-panel-dismiss, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
  {
-    background: url("../img/bg-orange.jpg") repeat scroll 0 0 #EF8C37 !important;
+  /*  background: url("../img/bg-orange.jpg") repeat scroll 0 0 #EF8C37 !important;*/
+	background: url("../img/bg-orange-dark.png") repeat scroll 50% 50% #EF8C37 !important;
     font-family: 'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif !important;
 }
 
@@ -230,12 +231,21 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 
 div#banner img, div#title img {
 	margin-top:70px;
-	width:100%;
+	max-width:100%;
 }
 
 btn#social_share {
 	position: fixed;
 	top:200px;
+}
+
+button#go.ui-btn {
+    background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #FB00F4;
+    box-shadow: 0 2px 3px #333333;
+    color: #FFFFFF;
+    font-weight: 300;
+    text-shadow: 0 1px 0 #333333;
 }
 /************ Preloadme **********************/
 

@@ -139,9 +139,9 @@ shareViaFacebook('Message via Facebook',
 	var data = {
   // currently required
   "name": "Love Froyo Share",
-  "iconURL": baseurl+"/firefox16.png",
-  "icon32URL": baseurl+"/firefox32.png",
-  "icon64URL": baseurl+"/firefox64.png",
+  "iconURL": baseurl+"/app-icon/firefox16.png",
+  "icon32URL": baseurl+"/app-icon/firefox32.png",
+  "icon64URL": baseurl+"/app-icon/firefox64.png",
 
   "shareURL": baseurl+"/javascript-application"+"/share.html?url=%{url}",
 
@@ -368,7 +368,7 @@ shareViaFacebook('Message via Facebook',
 	<div id="navigation">
 	</div>
 	<div id="sitelogo" style="margin:50px auto; text-align:center; visibility:visible;">
-		<img src="logo.png" style="width:200px"/>
+		<img src="logo.png" style="max-width:90%;"/>
 	</div>
 	<div data-role="content" class='content' style="visibility:visible; margin:0 auto; width:300px">
 		<div data-role="fieldcontain" id="connect_wrapper" style="visibility:hidden;">
@@ -388,7 +388,7 @@ shareViaFacebook('Message via Facebook',
 			<input type="password" id="login_pass" placeholder="Password"/>
 		</div>
 		<fieldset>
-			<div style="margin:0 auto; width:300px; position:fixed; bottom:10px;">
+			<div style="margin:0 auto; width:300px; position:fixed; bottom:10%;">
 				<button type="submit" id="go" style="visibility:visible; ">Hop in</button>
 			</div>
 			<div>
@@ -413,16 +413,16 @@ shareViaFacebook('Message via Facebook',
 		<div id="main-menu-holder">
 			<ul id="main-menu">
 				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-48"></i></a>
+				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-24"></i></a>
 				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-48"></i></a>
+				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-24"></i></a>
 				</li>
 				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-48"></i></a>
+				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-24"></i></a>
 				</li>
 				</li>
 				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-48"></i></a>
+				<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-24"></i></a>
 				</li>
 			</ul>
 		</div>
