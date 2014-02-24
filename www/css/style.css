@@ -204,7 +204,7 @@ html, body.ui-mobile-viewport, div.ui-mobile-viewport,
 ui-panel-dismiss-open.ui-panel-dismiss-position-left, .ui-panel-dismiss-open, ui-panel-dismiss, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
  {
   /*  background: url("../img/bg-orange.jpg") repeat scroll 0 0 #EF8C37 !important;*/
-	background: url("../img/bg-orange-dark.png") repeat scroll 50% 50% #EF8C37 !important;
+	background: url("../img/bg-orange-dark.png") repeat scroll 50% 50% #f7c86b !important;
     font-family: 'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif !important;
 }
 
@@ -214,7 +214,8 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 }
 
 #footer, .ui-footer {
-    background: url("../img/footer-tile.png") repeat-x scroll 0 0 #fb9ab2 !important;
+   /* background: url("../img/footer-tile.png") repeat-x scroll 0 0 #f76b6b !important;*/
+	background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     border-top: 1px solid #febde5 !important;
     bottom: 0 !important;
     display: block;
@@ -245,7 +246,7 @@ button#go.ui-btn {
     box-shadow: 0 2px 3px #333333;
     color: #FFFFFF;
     font-weight: 300;
-    text-shadow: 0 1px 0 #333333;
+    text-shadow: 1px -1px 1px #333333;
 }
 /************ Preloadme **********************/
 
@@ -430,9 +431,18 @@ div#controls {
         padding: 20px 0;
       }
 	  
+	    .style1 {
+    	width:100% !important;
+	  color: rgba(255, 255, 255, 0.8) !important;
+   
+   text-shadow: 1px 1px 1px #D9009B, 0 0 1px #FFFFFF, 1px -1px 1px #000000;
+}
+
 	  .style2 {
-      color: rgba(56, 61, 80, 0.8);
-    text-shadow: 0 1px 1px #FFFFFF, 0 0 0 #000000, 0 0 1px #FFFFFF;
+     /* color: rgba(56, 61, 80, 0.8) !important;*/
+	  color: rgba(255, 255, 255, 0.8) !important;
+   /* text-shadow: 0 1px 1px #FFFFFF, 0 0 0 #000000, 0 0 1px #FFFFFF;*/
+   text-shadow: 1px 1px 1px #D9009B, 0 0 1px #FFFFFF, 1px -1px 1px #000000;
 }
 	  .style5 {
     color: rgba(245, 159, 26, 0.8);
