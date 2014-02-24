@@ -7,11 +7,13 @@
 				$('#status').show('slow');
 				$('#shout-comments').hide();
 				$('#suggestion').hide();
+				
 				node_load(3, {
 					success: function(node) {
 						$('#preloader').fadeOut();
 					  $('#status').fadeOut();
 					  $('#social-comments').show('slow');
+					  $('#social-share').show('slow');
 					 // alert('Loaded node: ' + node.title);
 					 // $("#title").html(node.title);
 					 // $("#banner").html("<img src='" + node.path+"'/>");
@@ -53,9 +55,9 @@
 				node_load(5, {
 					success: function(node) {
 						$('#preloader').fadeOut();
-						$('#social-comments').hide();
 					  $('#status').fadeOut();
 					 $('#shout-comments').show('slow');
+					 $('#social-share').show('slow');
 					 // alert('Loaded node: ' + node.title);
 					 /* $("#title").html('Shout Out!');*/
 					  

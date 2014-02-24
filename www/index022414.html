@@ -13,7 +13,7 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script type='text/javascript' src='js/qunit-1.12.0.js'></script>-->
-    <link rel="stylesheet" href="foundation-icons/foundation-icons.css"/>
+    
     <link rel="stylesheet" type='text/css' href='css/jqm-demos.css' />
      <link rel='stylesheet' type='text/css' href='css/style.css' />
       <link rel="stylesheet" type='text/css' href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
@@ -359,131 +359,179 @@ shareViaFacebook('Message via Facebook',
     </script>
     
     
- <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
-	<div data-role="header">
-		<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>
-		<!--<h1 id="title">Love Froyo</h1>-->
-	</div>
-	<!-- header -->
-	<div id="navigation">
-	</div>
-	<div id="sitelogo" style="margin:50px auto; text-align:center; visibility:visible;">
-		<img src="logo.png" style="width:200px"/>
-	</div>
-	<div data-role="content" class='content' style="visibility:visible; margin:0 auto; width:300px">
-		<div data-role="fieldcontain" id="connect_wrapper" style="visibility:hidden;">
-			<!--   <label for="site_path">Server</label>-->
-			<input type="text" id="site_path" value="" placeholder="Server URL"/>
-		</div>
-		<div data-role="fieldcontain" id="connect2_wrapper" style="visibility:hidden;">
-			<!--<label for="endpoint">Service Name</label>-->
-			<input type="text" id="endpoint" value="" placeholder="Service Name"/>
-		</div>
-		<div data-role="fieldcontain" id="login_name_wrapper" style="display: none;">
-			<!--  <label for="login_name">Username</label>-->
-			<input type="text" id="login_name" value="" placeholder="Username"/>
-		</div>
-		<div data-role="fieldcontain" id="login_pass_wrapper" style="display: none;">
-			<!--  <label for="login_pass">Password</label>-->
-			<input type="password" id="login_pass" placeholder="Password"/>
-		</div>
-		<fieldset>
-			<div style="margin:0 auto; width:300px; position:fixed; bottom:10px;">
-				<button type="submit" id="go" style="visibility:visible; ">Hop in</button>
-			</div>
-			<div>
-				<button type="submit" id="login" style="display: none;">Login</button>
-			</div>
-			<!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
-			<div>
-				<button type="submit" id="run_tests" style="display: none;">Run Tests</button>
-			</div>
-			<div>
-				<button type="submit" id="run_nodes" style="display: none;">Nodes</button>
-			</div>
-		</fieldset>
-		<!--  <div id="messages">Message</div>
+   
+    <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
+      <div data-role="header">
+      <a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>
+        <!--<h1 id="title">Love Froyo</h1>-->
+      </div><!-- header -->
+      <div id="navigation"></div>
+        <div id="sitelogo" style="margin:50px auto; text-align:center; visibility:visible;"><img src="logo.png" style="width:200px" /></div>
+      <div data-role="content" class='content' style="visibility:visible; margin:0 auto; width:300px">
+        <div data-role="fieldcontain" id="connect_wrapper" style="visibility:hidden;">
+       <!--   <label for="site_path">Server</label>-->
+          <input type="text" id="site_path" value=""  placeholder="Server URL"/>
+        </div>
+        <div data-role="fieldcontain" id="connect2_wrapper" style="visibility:hidden;">
+          <!--<label for="endpoint">Service Name</label>-->
+          <input type="text" id="endpoint" value="" placeholder="Service Name" />
+        </div>
+        <div data-role="fieldcontain" id="login_name_wrapper" style="display: none;">
+        <!--  <label for="login_name">Username</label>-->
+          <input type="text" id="login_name" value="" placeholder="Username"/>
+        </div>
+        <div data-role="fieldcontain" id="login_pass_wrapper" style="display: none;">
+        <!--  <label for="login_pass">Password</label>-->
+          <input type="password" id="login_pass" placeholder="Password" />
+        </div>
+        <fieldset>
+         <div style="margin:0 auto; width:300px; position:fixed; bottom:10px;"><button type="submit" id="go" style="visibility:visible; ">Hop in</button></div>
+          <div><button type="submit" id="login" style="display: none;">Login</button></div>
+          <!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
+          <div><button type="submit" id="run_tests" style="display: none;">Run Tests</button></div>
+           <div><button type="submit" id="run_nodes" style="display: none;">Nodes</button></div>
+        </fieldset>
+     
+      <!--  <div id="messages">Message</div>
         <div id="image">Image</div>-->
-		<!--<div id="qunit"></div>
+        <!--<div id="qunit"></div>
         <ol id="qunit-tests"></ol>
         <div id="qunit-fixture"></div>-->
-	</div>
-	<!-- /content -->
-	<div data-role="footer" id="footer" style="display: none;">
-		<div id="main-menu-holder">
-			<ul id="main-menu">
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-48"></i></a>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-48"></i></a>
-				</li>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-48"></i></a>
-				</li>
-				</li>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-48"></i></a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /footer -->
-	<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
-			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
-			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
-		</ul>
-	</div>
-	<!-- /panel -->
-</div>
-<!-- /page -->
-<!-- Start of social page -->
+      </div><!-- /content -->
+      <div data-role="footer" id="footer" style="display: none;">
+      
 
-<div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
-	<div data-role="header" data-id="bhead" data-theme="e">
-			<!-- <h1 id="title">Page Title</h1>-->
-			   <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
-			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
-			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
-		</div>
-		<!-- /header -->
-		<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
-		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
-		<div id="navigation">
-			<!--<button id="social_share" onclick="window.plugins.socialsharing.share('My message')">share!</button>-->
-			<a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-left">Share</a>
-			<a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
-			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300">
-				
-			</div>
-			<!-- /popWin1 -->
-			<a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
-			<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300">
-				</iframe>
-			</div><!-- /popWin2 -->
-	
-			<a id="suggestion" href="#popupWin3" onclick="popupWin3();" data-rel="popup" data-icon="edit" data-position-to="window" class="ui-btn ui-corner-all ui-icon-edit ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Suggestion</a>
-			<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280">
-				</iframe>
-			</div>
-			<!-- /popWin3 -->
-		</div>
-		<!-- /navigation -->
-		
-		<!--<div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
-			
-		</div>-->
-		<!-- /footer -->
-	
-	</div>
-	<!-- /page -->
-	</body>
-	</html>
+     
+     <div id="main-menu-holder" >
+     <ul id="main-menu">
+   <li class="menu-leaf">
+      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"></a>
+     </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"></a>
+      </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listWhats();"  id="btn-whats" data-role="button"></a>
+      </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"></a>
+      </li>
+
+      </ul>
+      </div>
+      </div><!-- /footer -->
+      
+      
+       <div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#wform" onClick="listSocial();" >Social</a></li>
+                <li> <a href="#wform" onClick="listShout();">Shout Out</a></li>
+               <!-- <li><a href="#" onClick="listWhat();">What's New</a></li>
+                <li><a href="#" onClick="listVote();">Vote</a></li>-->
+                 <li><a href="#" id="login" onClick="user_login();" style="display:none;">Sign in</a></li>
+              <li data-icon="power"><a href="#" id="logout" onClick="user_logout();" style="display:none;">Logout</a></li>
+                
+                
+        </ul>
+    </div><!-- /panel -->
+    </div><!-- /page -->
+    
+     <!-- Start of social page -->
+    <div data-role="page" id="wform">
+      <div data-role="header" data-id="bhead" data-theme="e">
+      <div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo" style="display:block">
+       <!-- <h1 id="title">Page Title</h1>-->
+        <a href="#" onClick="listSocial();" data-icon="back" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+      </div>
+      <!-- /header -->
+ 
+         <div id="title" style="margin:0 auto; text-align:center; visibility:visible;">
+     <!--   <img src="http://www.m.reisandirvys.com/sites/default/files/styles/mobile_320x320/public/Social.png?itok=ulF572C0" style="width:100%"/>-->
+        </div>
+        
+    <div id = "latestlist" style="display:block;" data-role="content">
+        
+     
+  <div id="navigation">
+      <!--<button id="social_share" onclick="window.plugins.socialsharing.share('My message')">share!</button>-->
+      <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-notext">Share</a>
+      <a id="social-comments" href="#popupWin1"  onClick="popupWin1();"  data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300"></iframe>
+
+   <!-- /navigation -->
+
+
+    
+</div><!-- /popWin1 -->
+
+<a id="shout-comments" href="#popupWin2" onClick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+
+<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"></iframe>
+</div><!-- /popWin2 -->
+    
+<!--<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-right ui-btn-inline ui-icon-plus ui-btn-icon-left ui-corner-all" data-transition="pop" style="width:150px;">Comment</a>
+    <div id="comment_link"></div> 
+<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <form>
+        <div style="padding:10px 20px;">
+            <h3>Add Comment</h3>
+            <label for="un" class="ui-hidden-accessible">Username:</label>
+            <textarea cols="40" rows="8" name="textarea" id="textarea" data-theme="a"></textarea>-->
+            <!--<label for="pw" class="ui-hidden-accessible">Password:</label>
+            <input name="pass" id="pw" value="" placeholder="password" data-theme="a" type="password">-->
+         <!-- <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Add</button>
+        </div>
+    </form>
+</div>-->
+
+<a id="suggestion" href="#popupWin3" onClick="popupWin3();" data-rel="popup" data-icon="edit" data-position-to="window" class="ui-btn ui-corner-all ui-icon-edit ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280"></iframe>
+
+  
+
+
+    
+</div><!-- /popWin3 -->
+
+      </div> <!-- /navigation -->
+      
+           </div><!-- /content -->
+      
+
+
+      <div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
+      
+  <div id="main-menu-holder" >
+     <ul id="main-menu">
+   <li class="menu-leaf">
+      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"></a>
+     </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"></a>
+      </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listWhats();"  id="btn-whats" data-role="button"></a>
+      </li>
+       <li class="menu-leaf">
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"></a>
+      </li>
+
+      </ul>
+      </div>
+      </div><!-- /footer -->
+      
+      
+     
+      
+    </div>
+    <!-- /page -->
+    
+    
+  
+
+  </body>
+</html>
