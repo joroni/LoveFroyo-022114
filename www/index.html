@@ -404,17 +404,17 @@ shareViaFacebook('Message via Facebook',
      
      <div id="main-menu-holder" >
      <ul id="main-menu">
-    <li class="menu-leaf">
-      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><img src="img/lf-btn-social.jpg" width="80"></a>
+   <li class="menu-leaf">
+      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"></a>
      </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg" width="80"></a>
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg" width="80"></a>
+       <a href="#wform" onClick="listWhats();"  id="btn-whats" data-role="button"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg" width="80"></a>
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"></a>
       </li>
 
       </ul>
@@ -450,14 +450,13 @@ shareViaFacebook('Message via Facebook',
      <!--   <img src="http://www.m.reisandirvys.com/sites/default/files/styles/mobile_320x320/public/Social.png?itok=ulF572C0" style="width:100%"/>-->
         </div>
         
-    <div id = "latestlist" style="display:block;" data-role="content"></div>
+    <div id = "latestlist" style="display:block;" data-role="content">
         
      
- 
-       <div id="navigation">
+  <div id="navigation">
       <!--<button id="social_share" onclick="window.plugins.socialsharing.share('My message')">share!</button>-->
       <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-notext">Share</a>
-      <a id="social-comments" href="#popupWin1" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+      <a id="social-comments" href="#popupWin1"  onClick="popupWin1();"  data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
 <div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 <iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300"></iframe>
 
@@ -467,7 +466,7 @@ shareViaFacebook('Message via Facebook',
     
 </div><!-- /popWin1 -->
 
-<a id="shout-comments" href="#popupWin2" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+<a id="shout-comments" href="#popupWin2" onClick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
 
 <div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 <iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"></iframe>
@@ -488,10 +487,19 @@ shareViaFacebook('Message via Facebook',
     </form>
 </div>-->
 
+<a id="suggestion" href="#popupWin3" onClick="popupWin3();" data-rel="popup" data-icon="edit" data-position-to="window" class="ui-btn ui-corner-all ui-icon-edit ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-notext" style="display:none;">Comments</a>
+<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280"></iframe>
 
-      </div>
+  
+
+
+    
+</div><!-- /popWin3 -->
+
+      </div> <!-- /navigation -->
       
-           <!-- /content -->
+           </div><!-- /content -->
       
 
 
@@ -499,15 +507,17 @@ shareViaFacebook('Message via Facebook',
       
   <div id="main-menu-holder" >
      <ul id="main-menu">
-    <li class="menu-leaf"><a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"><a href="#wform" onClick="listSocial();" id="btn-social2"  data-role="button"><a href="#wform" onClick="listSocial();" id="btn-social3"  data-role="button"></a><a href="#wform" onClick="listSocial();" id="btn-social4"  data-role="button"><img src="img/lf-btn-social.jpg" width="80"></a></li>
+   <li class="menu-leaf">
+      <a href="#wform" onClick="listSocial();" id="btn-social"  data-role="button"></a>
+     </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"><img src="img/lf-btn-shout.jpg" width="80"></a>
+       <a href="#wform" onClick="listShout();"  id="btn-shout" data-role="button"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listWhat();"  id="btn-what" data-role="button"><img src="img/lf-btn-whats.jpg" width="80"></a>
+       <a href="#wform" onClick="listWhats();"  id="btn-whats" data-role="button"></a>
       </li>
        <li class="menu-leaf">
-       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"><img src="img/lf-btn-vote.jpg" width="80"></a>
+       <a href="#wform" onClick="listVote();"  id="btn-vote" data-role="button"></a>
       </li>
 
       </ul>

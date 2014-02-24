@@ -36,6 +36,8 @@ iframe {
 	border-style:none;
 }
 
+
+
 div#main-menu-holder {
     left: -2px;
     padding: 0 !important;
@@ -93,10 +95,25 @@ background: url("../img/lf-gui-350.jpg") repeat-x scroll 0 1px #ED088E !importan
 
 }*/
 
-/*ul#main-menu li a#btn-shout {
-background: url("../img/lf-gui-350.jpg") repeat-x scroll -80px 1px #ED088E !important;
-width:67px;
-}*/
+ul#main-menu li a#btn-social {
+background: url("../img/lf-btn-social.png") repeat-x scroll 0px 0px transparent !important;
+width:80px;
+}
+
+ul#main-menu li a#btn-shout {
+background: url("../img/lf-btn-shout.png") repeat-x scroll 0px 0px transparent !important;
+width:80px;
+}
+
+ul#main-menu li a#btn-whats {
+background: url("../img/lf-btn-whats.png") repeat-x scroll 0px 0px transparent !important;
+width:80px;
+}
+
+ul#main-menu li a#btn-vote {
+background: url("../img/lf-btn-vote.png") repeat-x scroll 0px 0px transparent !important;
+width:80px;
+}
 
 ul#main-menu li.menu-leaf a:active {
 	color:#fff;
