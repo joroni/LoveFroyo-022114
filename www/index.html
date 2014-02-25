@@ -95,6 +95,7 @@
 <script>
 	  function connect(){
 		 $().ready(function() {
+			 
 		 Drupal.settings.site_path = "http://m.reisandirvys.com"; // http://www.example.com
       // Set the Service Resource endpoint path.
       Drupal.settings.endpoint = "rest";
@@ -102,6 +103,7 @@
              $('#endpoint').val(Drupal.settings.endpoint);
 		 });
 	}
+	
       </script>
 <script>
 	  shareViaTwitter('My message');
@@ -217,6 +219,8 @@ shareViaFacebook('Message via Facebook',
                       }*/
                     }
                     else {
+						 $('#login_name_wrapper').show('slow');
+                    $('#login_pass_wrapper').show('slow');
                       $('#login').show('slow');
                       $('#go').hide();
                     }
@@ -343,85 +347,93 @@ shareViaFacebook('Message via Facebook',
 				<button type="submit" data-role="button" id="go" class="style1" style="visibility:visible;">Hop in</button>
 			</div>
 			<div>
-				<div>
-					<button type="submit" id="login" style="display: none;">Login</button>
-				</div>
-				<!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
-				<div>
-					<button type="submit" id="run_tests" style="display: none;">Run Tests</button>
-				</div>
-				<div>
-					<button type="submit" id="run_nodes" style="display: none;">Nodes</button>
-				</div>
-			</fieldset>
-			<!--  <div id="messages">Message</div>
+			<div>
+				<button type="submit" id="login" style="display: none;">Login</button>
+			</div>
+			<!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
+			<div>
+				<button type="submit" id="run_tests" style="display: none;">Run Tests</button>
+			</div>
+			<div>
+				<button type="submit" id="run_nodes" style="display: none;">Nodes</button>
+			</div>
+		</fieldset>
+		<!--  <div id="messages">Message</div>
         <div id="image">Image</div>-->
-			<!--<div id="qunit"></div>
+		<!--<div id="qunit"></div>
         <ol id="qunit-tests"></ol>
         <div id="qunit-fixture"></div>-->
-		</div>
-		<!-- /content -->
-		<div data-role="footer" id="footer" style="display: block;">
-			<div id="main-menu-holder">
-				<ul id="main-menu">
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
-					</li>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
-					</li>
-					</li>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-36"></i></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- /footer -->
-		<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-			<ul data-role="listview">
-				<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-				<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
-				<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
-				<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
-				<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
-				<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
-				<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
+	</div>
+	<!-- /content -->
+	<div data-role="footer" id="footer" style="display: none;">
+		<div id="main-menu-holder">
+			<ul id="main-menu">
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
+				</li>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
+				</li>
+				</li>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-36"></i></a>
+				</li>
 			</ul>
 		</div>
-		<!-- /panel -->
 	</div>
-	<!-- /page -->
-	<!-- Start of social page -->
-	<div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
-		<div data-role="header" data-id="bhead" data-theme="e">
+	<!-- /footer -->
+	<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
+			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
+			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
+		</ul>
+	</div>
+	<!-- /panel -->
+</div>
+<!-- /page -->
+
+
+<!-- Start of social page -->
+
+<div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
+	<div data-role="header" data-id="bhead" data-theme="e">
 			<!-- <h1 id="title">Page Title</h1>-->
-			<a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
+			   <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
 			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
 			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
 		</div>
 		<!-- /header -->
-		<div id="title" style="margin:0 auto; text-align:center; visibility:visible;">
-		</div>
-		<div id "latestlist" style="display:block;" data-role="content">
-		</div>
-		<!-- /content -->
+		<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
+		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
 		<div id="navigation">
 			<!--<button id="social_share" onclick="window.plugins.socialsharing.share('My message')">share!</button>-->
-			<a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-left">Share</a>
+			<a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn ui-icon-heart ui-btn-icon ui-btn-icon-left" style="display:none;">Share</a>
 			<a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
 			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300">
+				</iframe>
 			</div>
 			<!-- /popWin1 -->
-			<a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
+            
+            
+            <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
 			<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 				<iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300">
 				</iframe>
 			</div>
 			<!-- /popWin2 -->
+            
+            
+            
+		
+	
 			<a id="suggestion" href="#popupWin3" onclick="popupWin3();" data-rel="popup" data-icon="edit" data-position-to="window" class="ui-btn ui-corner-all ui-icon-edit ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Suggestion</a>
 			<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 				<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280">
@@ -430,26 +442,34 @@ shareViaFacebook('Message via Facebook',
 			<!-- /popWin3 -->
 		</div>
 		<!-- /navigation -->
+		
 		<div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
+			<div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
 			<div id="main-menu-holder">
-				<ul id="main-menu">
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
-					</li>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
-					</li>
-					</li>
-					<li class="menu-leaf">
-					<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-36"></i></a>
-					</li>
-				</ul>
-				</di>
+			<ul id="main-menu">
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
+				</li>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
+				</li>
+				</li>
+				<li class="menu-leaf">
+				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
+                	<div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+				<iframe src="http://m.reisandirvys.com/node/11" seamless height="400" width="280">
+				</iframe>
 			</div>
-			<!-- /footer -->
+			<!-- /popWin4 -->
+				</li>
+			</ul>
 		</div>
-		<!-- /page -->
-		</body>
-		</html>
+		</div>
+		<!-- /footer -->
+	
+	</div>
+	<!-- /page -->
+	</body>
+	</html>

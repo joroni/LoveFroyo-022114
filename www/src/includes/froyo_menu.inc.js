@@ -4,11 +4,13 @@
 				$('#status').show('slow');
 				$('#shout-comments').hide();
 				$('#suggestion').hide();
-				  $('#social-comments').show('slow');
+				  
 				node_load(3, {
 					success: function(node) {
 						$('#preloader').fadeOut();
 					  $('#status').fadeOut();
+					  $('#social_share').show('slow');
+					  $('#social-comments').show('slow');
 					
 					 
 					 $("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
@@ -41,13 +43,14 @@
 				$('#status').show('slow');
 				$('#social-comments').hide();
 				$('#suggestion').hide();
-				$('#shout-comments').show('slow');
+				 $('#shout-comments').show('slow');
 				node_load(5, {
 					success: function(node) {
 						$('#preloader').fadeOut();
 						$('#social-comments').hide();
 					  $('#status').fadeOut();
-					 
+					 $('#social_share').show('slow');
+					
 					 // alert('Loaded node: ' + node.title);
 					 /* $("#title").html('Shout Out!');*/
 					  
@@ -113,3 +116,46 @@
 							});
 			}
      // END WHATS PAGE
+	 
+	 // VOTE PAGE 
+
+			function listVote() {
+				
+				/*var query = {
+				  parameters: {
+					vid: 7
+				  }
+				};
+				taxonomy_term_index(query, {
+					success: function(terms) {
+					  if (terms.length == 0) { return; }
+					  alert('Loaded ' + terms.name + ' term(s)!');
+					}
+				});*/
+				 $('#suggestion').hide();
+				$('#preloader').show('slow');
+				$('#status').show('slow');
+				$('#social_share').hide();
+				
+				
+				node_load(11, {
+					success: function(node) {
+						$('#preloader').fadeOut();
+					  $('#status').fadeOut();
+					  $('#social_share').hide();
+					//$("#title").html(node.title);
+						/*$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");*/
+					$('#preloader').fadeOut();
+								  $('#status').fadeOut();
+									//$("#contents").html(data);
+					},
+					error: function(xhr, status, message) {
+					  alert(message)
+					}
+				});
+				
+				
+			}
+
+			
+     // END VOTE PAGE
