@@ -316,6 +316,171 @@ shareViaFacebook('Message via Facebook',
           });
       });
     </script>
+<!-- Preloader -->
+<script type="text/javascript">
+      $().ready(function() {
+            // Set the site path (without the trailing slash).
+      Drupal.settings.site_path = "http://m.reisandirvys.com"; // http://www.example.com
+      // Set the Service Resource endpoint path.
+      Drupal.settings.endpoint = "rest";
+          Drupal.settings.debug = true;
+		function set_drupal_settings() {
+            Drupal.settings.site_path = $('#site_path').val();
+            Drupal.settings.endpoint = $('#endpoint').val();
+          }
+          // Set the site path.
+        
+          $('#site_path').val(Drupal.settings.site_path);
+		   $('#endpoint').val(Drupal.settings.endpoint);
+		  set_drupal_settings();
+           $('#go').on('click', function(){
+             $('#preloader').show('slow');
+		  	$('#status').show('slow'); 
+              if (Drupal.settings.site_path == '') {
+                alert('Enter a site path!');
+                return false;
+              }
+              if (Drupal.settings.endpoint == '') {
+                alert('Enter an endpoint path!');
+                return false;
+              }
+			/* function Checker(){
+              if (Drupal.settings.site_path == '') {
+                alert('Enter a site path!');
+                return false;
+              }
+              if (Drupal.settings.endpoint == '') {
+                alert('Enter an endpoint path!');
+                return false;
+              }
+			 */
+              system_connect({
+                  success:function(result){
+					 $('#footer').hide();
+					   $('#preloader').fadeOut();
+					  $('#status').fadeOut();
+					$('#connect_wrapper').hide();
+					 $('#connect2_wrapper').hide();
+                      $('#login_name_wrapper').show('slow');
+                    $('#login_pass_wrapper').show('slow');
+					 $('#login').show('slow');
+					  $('#logout').hide();
+                    if (result.user.uid != 0) {
+					$('#go').hide();
+					$('#login_name_wrapper').hide();
+                    $('#login_pass_wrapper').hide();
+					$('#footer').show('slow');
+					$('#navmenu').show('slow');
+					 $('#login').hide();
+                      $('#logout').show('slow');
+                      $('#go').hide();
+					   $('#run_nodes').hide();
+                      //if (Drupal.user.uid == 0) {
+					if (result.user.uid == 0) {
+					$('#go').show('slow');
+					$('#login').show('slow');
+					$('#logout').hide();
+					$('#footer').hide();
+                      }
+                      /*else {
+                       // alert('Only user #1 can perform tests, your are user # ' + Drupal.user.uid + '!');
+					    alert('Please Sign in');
+                      }*/
+                    }
+                    else {
+                      $('#login').show('slow');
+                      $('#go').hide();
+                    }
+                  },
+                  error:function(xhr, status, message){
+                    alert(message);
+                  }
+              });
+              return false;
+          });
+		/*};
+           Checker();*/
+          $('#login').on('click', function(){
+              set_drupal_settings();
+			    $('#preloader').show('slow');
+					  $('#status').show('slow');
+              user_login($('#login_name').val(), $('#login_pass').val(), {
+                  success:function(result){
+                    alert('Hi, ' + result.user.name + '!');
+                    $('#login').hide();
+					 $('#navmenu').show('slow');
+					    $('#preloader').fadeOut();
+					  $('#status').fadeOut();
+					  $('#login_name_wrapper').hide();
+                    $('#login_pass_wrapper').hide();
+                    $('#logout').show('slow');
+                    $('#run_nodes').hide();
+					 $('#footer').show('slow');
+                  },
+                  error:function(xhr, status, message){
+                    alert(message);
+                  }
+              });
+              return false;
+          });
+          $('#logout').on('click', function(){
+			    $('#preloader').show('slow');
+					  $('#status').show('slow');
+              user_logout({
+                  success:function(result){
+					    $('#preloader').fadeOut();
+					  $('#status').fadeOut();
+                    if (result[0]) {
+                       alert("Logged out!");
+					    $('#login_name_wrapper').show('slow');
+                    $('#login_pass_wrapper').show('slow');
+                       $('#login').show('slow');
+                       //$('#run_nodes').hide();
+                       $('#logout').hide();
+                    }
+                  }
+              });
+              return false;
+          });
+           set_drupal_settings();
+        /*  function set_drupal_settings() {
+            Drupal.settings.site_path = $('#site_path').val();
+            Drupal.settings.endpoint = $('#endpoint').val();
+          }*/
+         /* $('#run_tests').on('click', function(){
+              if ($('#login_name').val() == '') {
+                alert('Enter your user name to run tests!');
+                return false;
+              }
+              if ($('#login_pass').val() == '') {
+                alert('Enter your password to run tests!');
+                return false;
+              }
+              set_drupal_settings();
+              test_services_system();
+              // this call iterates through other tests
+              test_services_user($('#login_name').val(), $('#login_pass').val());
+              return false;
+          });*/
+		   $('#run_nodes').on('click', function(){
+              if ($('#login_name').val() == '') {
+                alert('Enter your user name to run tests!');
+                return false;
+              }
+              if ($('#login_pass').val() == '') {
+                alert('Enter your password to run tests!');
+                return false;
+              }
+              set_drupal_settings();
+              //services_node();
+			   services_term();
+			  //taxonomy_term_load();
+              // this call iterates through other tests
+           // user_load($('#login_name').val(), $('#login_pass').val());
+              return false;
+          });
+      });
+    </script>
 <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
 	<div data-role="header">
 		<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>-->
@@ -408,15 +573,29 @@ shareViaFacebook('Message via Facebook',
 <!-- Start of social page -->
 
 <div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
+
+<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
+			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
+			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
+		</ul>
+	</div>
+	 <!-- panel -->
 	<div data-role="header" data-id="bhead" data-theme="e">
 			<!-- <h1 id="title">Page Title</h1>-->
-			   <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
-               <a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>
+			  <!-- <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>-->
+              
 			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
 			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
+            	<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
         </div>
 		<!-- /header -->
-		<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
+	
 		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
 		<div id="navigation">
 			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
@@ -445,6 +624,13 @@ shareViaFacebook('Message via Facebook',
 				</iframe>
 			</div>
 			<!-- /popWin3 -->
+            
+            <div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content" style="overflow:hidden;">
+				<iframe src="http://m.reisandirvys.com/node/11" seamless height="455" width="290">
+				</iframe>
+			</div>
+            
+            
 		</div>
 		<!-- /navigation -->
 		
@@ -463,30 +649,24 @@ shareViaFacebook('Message via Facebook',
 				</li>
 				<li class="menu-leaf">
 				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
-                	<div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/11" seamless height="400" width="280">
-				</iframe>
-			</div>
+                	
 			<!-- /popWin4 -->
 				</li>
+                <li class="menu-leaf">
+                
+                 <a href="#nav-panel" id="btn-shout" data-role="button"><i class="step style2 fi-list size-36 "></i></a>
+                
+
+                </li>
 			</ul>
 		</div>
+        
+        
 		</div>
 		<!-- /footer -->
 	
         
-<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
-			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
-			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
-		</ul>
-	</div>
-	 /panel 
+
     
 	</div>
 	<!-- /page -->
