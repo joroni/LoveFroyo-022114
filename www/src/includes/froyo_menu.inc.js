@@ -10,7 +10,7 @@
 						$('#preloader').fadeOut();
 					  $('#status').fadeOut();
 					  $('#social_share').show('slow');
-					  $('#social-comments').show('slow');
+					//  $('#social-comments').show('slow');
 					
 					 
 					 $("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
@@ -38,18 +38,19 @@
 		
 		//SHOUT PAGE 
 
-			function listShout() {
+		function listShout() {
 					$('#preloader').show('slow');
 				$('#status').show('slow');
-				$('#social-comments').hide();
+				//$('#social-comments').hide();
 				$('#suggestion').hide();
 				 $('#shout-comments').show('slow');
+				 $('#social_share').hide();
 				node_load(5, {
 					success: function(node) {
 						$('#preloader').fadeOut();
-						$('#social-comments').hide();
+						//$('#social-comments').hide();
 					  $('#status').fadeOut();
-					 $('#social_share').show('slow');
+					 $('#social_share').hide();
 					
 					 // alert('Loaded node: ' + node.title);
 					 /* $("#title").html('Shout Out!');*/
@@ -77,16 +78,20 @@
 			}
       // END SHOUT PAGE 
 	  
+	 
+	 
+	 
 	 // WHATS PAGE 
-
-			function listWhats() {
+	function listWhats() {
 				$('#preloader').show('slow');
 				$('#status').show('slow');
 				$('#social_share').hide();
-				
+			//	$('#social-comments').hide();
+				$('#shout-comments').hide();
 				
 				node_load(15, {
 					success: function(node) {
+						//('#social-comments').hide();
 						$('#preloader').fadeOut();
 					  $('#status').fadeOut();
 					  $('#suggestion').show('slow');
@@ -118,7 +123,6 @@
      // END WHATS PAGE
 	 
 	 // VOTE PAGE 
-
 			function listVote() {
 				
 				/*var query = {
