@@ -10,7 +10,7 @@
 }
 
 div#navigation {
-	bottom: 4.5em;
+	bottom: 3em;
     padding: 0 10px;
     position: fixed;
     width: 100%;
@@ -214,8 +214,8 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 }
 
 #footer, .ui-footer {
-    background: url("../img/header-tile.png") repeat-x scroll 0 0 #f76b6b !important;
-	/*background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;*/
+   /* background: url("../img/footer-tile.png") repeat-x scroll 0 0 #f76b6b !important;*/
+	background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     border-top: 1px solid #febde5 !important;
     bottom: 0 !important;
     display: block;
@@ -245,13 +245,53 @@ button#go.style1 {
     box-shadow: 0 2px 3px #333333;
     color: #FFFFFF;
     font-weight: 300;
-    
-	
-	 background: none repeat scroll 0 0 #D9009B;
+    background: none repeat scroll 0 0 #D9009B;
     border-color: #FB00F4;
     color: #FFFFFF;
     text-shadow: 1px -1px 1px #333333;
 }
+
+a#suggestion.style2, button#suggestion.style2 {
+    background: none repeat scroll 0 0 #CBFB3F !important;
+    border-color: #65A5D1 !important;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 2px #333333 !important;
+    color: #333 !important;
+    font-family: arial;
+    font-size: 18px;
+    font-weight: 200;
+    margin-right: 5px !important;
+    padding: 28px 15px;
+    text-shadow: 1px 1px 0 #FFF !important
+}
+
+a#social_share.ui-btn.style3 {
+    background: none repeat scroll 0 0 #3E94D1 !important;
+    border-color: #65A5D1 !important;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 2px #333333 !important;
+    color: #FFF !important;
+    font-family: arial;
+    font-size: 18px;
+    font-weight: 200;
+    margin-right: 5px !important;
+    padding: 28px 15px;
+    text-shadow: 1px 1px 0 #03406A !important;
+}
+a#social-comments.style4 {
+    background: none repeat scroll 0 0 #65A5D1!important;
+    border-color: #FFF !important;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 2px #333333 !important;
+    color: #FFF !important;
+    font-family: arial;
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0 auto !important;
+    padding: 28px 15px;
+    text-shadow: 1px 1px 0 #03406A !important;
+}
+
 /************ Preloadme **********************/
 
 body {
