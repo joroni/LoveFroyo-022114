@@ -214,8 +214,8 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 }
 
 #footer, .ui-footer {
-   /* background: url("../img/footer-tile.png") repeat-x scroll 0 0 #f76b6b !important;*/
-	background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  	background: url("../img/header-tile.png") repeat-x scroll 0 0 #f76b6b !important;
+/*	background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;*/
     border-top: 1px solid #febde5 !important;
     bottom: 0 !important;
     display: block;
