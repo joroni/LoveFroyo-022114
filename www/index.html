@@ -318,7 +318,7 @@ shareViaFacebook('Message via Facebook',
     </script>
 <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
 	<div data-role="header">
-		<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>
+		<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>-->
        
 		<!--<h1 id="title">Love Froyo</h1>-->
 	</div>
@@ -387,7 +387,9 @@ shareViaFacebook('Message via Facebook',
 		</div>
 	</div>
 	<!-- /footer -->
-	<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+    
+    
+	<!--<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
 			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
@@ -409,6 +411,7 @@ shareViaFacebook('Message via Facebook',
 	<div data-role="header" data-id="bhead" data-theme="e">
 			<!-- <h1 id="title">Page Title</h1>-->
 			   <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
+               <a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>
 			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
 			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
         </div>
@@ -417,11 +420,7 @@ shareViaFacebook('Message via Facebook',
 		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
 		<div id="navigation">
 			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
-			
-            
-            
-            
-          <!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
+			<!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
 			<a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style4 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
 			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300">
@@ -475,6 +474,20 @@ shareViaFacebook('Message via Facebook',
 		</div>
 		<!-- /footer -->
 	
+        
+<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
+			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
+			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
+			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
+		</ul>
+	</div>
+	 /panel 
+    
 	</div>
 	<!-- /page -->
 	</body>
