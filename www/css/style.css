@@ -214,8 +214,8 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 }
 
 #footer, .ui-footer {
-  	background: url("../img/header-tile.png") repeat-x scroll 0 0 #f76b6b !important;
-/*	background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;*/
+    background: url("../img/header-tile.png") repeat-x scroll 0 0 #f76b6b !important;
+	/*background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;*/
     border-top: 1px solid #febde5 !important;
     bottom: 0 !important;
     display: block;
@@ -251,7 +251,7 @@ button#go.style1 {
     text-shadow: 1px -1px 1px #333333;
 }
 
-a#suggestion.style2, button#suggestion.style2 {
+/*a#suggestion.style2, button#suggestion.style2 {
     background: none repeat scroll 0 0 #CBFB3F !important;
     border-color: #65A5D1 !important;
     border-radius: 0.5em;
@@ -290,7 +290,7 @@ a#social-comments.style4 {
     margin: 0 auto !important;
     padding: 28px 15px;
     text-shadow: 1px 1px 0 #03406A !important;
-}
+}*/
 
 /************ Preloadme **********************/
 
@@ -493,4 +493,49 @@ div#controls {
     font-size: 70px;
     text-shadow: 1px 4px 6px #FFFFFF, 0 0 0 #000000, 1px 4px 6px #FFFFFF;
 }
+
+
+
+
+/* HTML5 BUTTONS */
+
+
+
+
+
+
+    /***FIRST STYLE THE BUTTON***/
+    input#bigbutton, a#suggestion.style2, a#social_share.ui-btn.style3, button#social_share.style3, a#shout-comments.ui-btn.style3  {
+    width:250px;
+    background: #3e9cbf; /*the colour of the button*/
+    padding: 8px 14px 10px; /*apply some padding inside the button*/
+    border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+    cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+    /*style the text*/
+    font-size:1.5em;
+    font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+    letter-spacing:.1em;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+    color: #fff;
+    /*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+    -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    /*give the corners a small curve*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    }
+    /***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+    input#bigbutton:hover, input#bigbutton:focus,
+	a#suggestion.style2:hover, a#suggestion.style2:focus,
+	a#social_share.ui-btn.style3:hover, a#social_share.ui-btn.style3:focus,
+	a#shout-comments.ui-btn.style3:hover, a#shout-comments.ui-btn.style3focus,
+	button#social_share.style3:hover, button#social_share.style3:focus {
+    color:#dfe7ea;
+    /*reduce the size of the shadow to give a pushed effect*/
+    -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+    box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+    }
 
