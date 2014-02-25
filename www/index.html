@@ -106,20 +106,9 @@
 	
       </script>
 <script>
-	  shareViaTwitter('My message');
-shareViaFacebook('Message via Facebook',
-               null,
-           null,
-             console.log('share ok'), // success callback
-         function(errormsg){alert(errormsg)}) // error callback
-/*shareVia('com.apple.social.sinaweibo' // for options, see the repo
-         'Message via Weibo on iOS',
-         null,
-         null,
-         console.log('share ok'), */// success callback
-        /* function(errormsg){alert(errormsg)})*/ // error callback
-	</script>
-<script>
+	 
+/*	</script>
+<script>*/
 	var data = {
   // currently required
   "name": "Love Froyo Share",
@@ -134,6 +123,19 @@ shareViaFacebook('Message via Facebook',
   // optional
   "version": "1.0"
 }
+
+ shareViaTwitter('My message');
+shareViaFacebook('Message via Facebook',
+               null,
+           null,
+             console.log('share ok'), // success callback
+         function(errormsg){alert(errormsg)}) // error callback
+/*shareVia('com.apple.social.sinaweibo' // for options, see the repo
+         'Message via Weibo on iOS',
+         null,
+         null,
+         console.log('share ok'), */// success callback
+        /* function(errormsg){alert(errormsg)})*/ // error callback
 	</script>
 </head>
 <body onload="connect();">
@@ -414,7 +416,7 @@ shareViaFacebook('Message via Facebook',
 		<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
 		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
 		<div id="navigation">
-			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo', '#FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
+			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
 			
             
             
