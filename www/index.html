@@ -5,6 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="logo.png" type="image/png"/>
+<!--GOOGLE FONTS-->
+<link href='http://fonts.googleapis.com/css?family=Andika|Oswald:400,700|PT+Sans+Narrow|Arimo:400,700,400italic,700italic|Droid+Sans|Bitter' rel='stylesheet' type='text/css'>
+
 <!-- <link rel="stylesheet" type='text/css' href='css/jquery.mobile-1.4.0.min.css' />
     <link rel="stylesheet" type='text/css' href='css/jqm-demos.css' />
     <link rel='stylesheet' type='text/css' href='css/qunit-1.12.0.css' />
@@ -106,9 +109,7 @@
 	
       </script>
 <script>
-	 
-/*	</script>
-<script>*/
+	
 	var data = {
   // currently required
   "name": "Love Froyo Share",
@@ -381,8 +382,16 @@ shareViaFacebook('Message via Facebook',
 				</li>
 				</li>
 				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-36"></i></a>
+				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
+                	
+			<!-- /popWin4 -->
 				</li>
+                <li class="menu-leaf">
+                
+                 <a href="#nav-panel" id="btn-shout" data-role="button"><i class="step style2 fi-list size-36"></i></a>
+                
+
+                </li>
 			</ul>
 		</div>
 	</div>
@@ -409,7 +418,7 @@ shareViaFacebook('Message via Facebook',
 
 <div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
 
-<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+<!--<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
 			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
@@ -419,7 +428,7 @@ shareViaFacebook('Message via Facebook',
 			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
 			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
 		</ul>
-	</div>
+	</div>-->
 	 <!-- panel -->
 	<div data-role="header" data-id="bhead" data-theme="e">
 			<!-- <h1 id="title">Page Title</h1>-->
@@ -427,11 +436,15 @@ shareViaFacebook('Message via Facebook',
               
 			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
 			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
-            	<div id="title" style="margin:0 auto; text-align:center; visibility:visible;"></div>
+         <div id="title" style="margin:0 auto; text-align:center; visibility:visible; left: 0;
+    margin-top: 0; max-width: 70%; position: fixed; top: 0;"></div>
+        
+        
         </div>
 		<!-- /header -->
 	
-		<div id "latestlist" style="display:block;" data-role="content"></div><!-- /content -->
+		<div id="listArticles" style="display:none; margin-top:100px;" data-role="content"><iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"> </iframe>
+        </div><!-- /content -->
 		<div id="navigation">
 			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
 			<!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
