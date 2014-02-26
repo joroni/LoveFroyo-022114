@@ -97,7 +97,7 @@
 								$('#status').fadeOut();
 								$("#contents").html(data);
 								$("#listArticles").show('slow');
-								$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
+								$("#title").html("<img src='"+Drupal.settings.site_path + node.title +"' class ='mini-heading'/>");
 							
 								//$("#listArticles").html(data);
 								},
@@ -105,7 +105,31 @@
 								  alert(message)
 								}
 							});
+					
+					
+					
+					
+					
 			}
+					
+				function popupWin2() {
+						$('#preloader').show('slow');
+						$('#status').show('slow');
+					node_load(5, {
+								success: function(node) {
+									$('#preloader').fadeOut();
+								  $('#status').fadeOut();
+								  $("#comments").show('slow');
+								  $("#viewcomment").hide();
+									//$("#contents").html(data);
+								 // alert('Loaded node: ' + node.title);
+								},
+								error: function(xhr, status, message) {
+								  alert(message)
+								}
+							});
+						}
+				
 					
       // END SHOUT PAGE 
 	  

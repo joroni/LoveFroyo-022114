@@ -147,7 +147,8 @@ shareViaFacebook('Message via Facebook',
 	</div>
 </div>
 <script type="text/javascript">
-      $().ready(function() {
+
+	$().ready(function() {
             // Set the site path (without the trailing slash).
       Drupal.settings.site_path = "http://m.reisandirvys.com"; // http://www.example.com
       // Set the Service Resource endpoint path.
@@ -315,8 +316,20 @@ shareViaFacebook('Message via Facebook',
            // user_load($('#login_name').val(), $('#login_pass').val());
               return false;
           });
+		  
+		  $('#popClose').on('click', function(){
+             $('#popupWin3-screen').hide();
+              //return false;
+          });
+		  
+		  
       });
     </script>
+    <script>
+	
+
+			  
+	</script>
 <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
 	<div data-role="header">
 		<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>-->
@@ -453,15 +466,15 @@ shareViaFacebook('Message via Facebook',
             
             <a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style4 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
 			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="420" width="320" style="width:100%; height:100%;">
+				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="420" width="320" style="width:100%; height:100%; display:block;">
 				</iframe>
 			</div>
 			 <!-- /popWin21-->
             
             
-            <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="style3 ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
+            <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="style3 btn-mini ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Add Comment</a>
 			<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-			  <iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"> </iframe>
+			  <iframe src="http://m.reisandirvys.com/comment/reply/5.json#comment-form" seamless height="300" width="300" style="overflow:hidden;"> </iframe>
 			</div>
 		  <!-- /popWin2 -->
             
@@ -477,7 +490,7 @@ shareViaFacebook('Message via Facebook',
 			<!-- /popWin3 -->
             
             <div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content" style="overflow:hidden;">
-				<iframe src="http://m.reisandirvys.com/node/11" seamless height="455" width="290">
+				<iframe src="http://m.reisandirvys.com/node/11" seamless height="400" width="300">
 				</iframe>
 			</div>
             
