@@ -13,6 +13,7 @@ div#navigation {
 	bottom: 5em;
     padding: 0 10px;
     position: fixed;
+    text-align: center;
     width: 100%;
 }
 
@@ -522,13 +523,13 @@ div#listArticles {
 div#title {
 	position:fixed;
 	top:0px;
-	width:320px;
+	width:100%;
 }
 
 
 /* HTML5 BUTTONS */
 
-
+/*
 a#shout-comments.style3.btn-mini {
     background: none repeat scroll 0 0 #3E9CBF;
     border-radius: 5px !important;
@@ -542,7 +543,7 @@ a#shout-comments.style3.btn-mini {
     position: fixed;
     width: 301px !important;
     z-index: 100;
-}
+}*/
 
 
     /***FIRST STYLE THE BUTTON***/
@@ -550,7 +551,7 @@ a#shout-comments.style3.btn-mini {
     background: none repeat scroll 0 0 #3E9CBF;
     border: 1px solid #3E9CBF;
     border-radius: 10px;
-    box-shadow: 0 1px 0 #3E9CBF inset, 0 1px 0 0 #FFFFFF, 0 10px 5px #999999;
+  box-shadow: 0 1px 0 #3E9CBF inset, 0 1px 0 0 #FFFFFF, 0 3px 4px #555555;
     color: #FFFFFF;
     cursor: pointer;
     font-family: Oswald,sans-serif;
