@@ -514,8 +514,9 @@ div#controls {
 
 
 div#listArticles {
-    height: 315px;
+    height: 420px;
     position: fixed;
+    top: 100px;
 }
 
 div#title {
@@ -529,8 +530,8 @@ div#title {
 
 
 a#shout-comments.style3.btn-mini {
-	    background: none repeat scroll 0 0 #3E9CBF;
-    border-radius: 0 0 5px 5px !important;
+    background: none repeat scroll 0 0 #3E9CBF;
+    border-radius: 5px !important;
     border-top: 1px solid #FFFFFF !important;
     bottom: 45px;
     box-shadow: 1px 1px 2px #333333 !important;
@@ -544,29 +545,21 @@ a#shout-comments.style3.btn-mini {
 }
 
 
-
     /***FIRST STYLE THE BUTTON***/
-    input#bigbutton, a#suggestion.style2, a#social_share.ui-btn.style3, button#social_share.style3, a#shout-comments.ui-btn.style3  {
-    width:250px;
-    background: #3e9cbf; /*the colour of the button*/
-    padding: 8px 14px 10px; /*apply some padding inside the button*/
-    border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
-    cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
-    /*style the text*/
-    font-size:1.5em;
-    font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
-    letter-spacing:.1em;
-    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
-    color: #fff;
-    /*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
-    -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-    -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-    box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-    /*give the corners a small curve*/
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+ input#bigbutton, a#suggestion.style2, a#social_share.ui-btn.style3, button#social_share.style3, a#shout-comments.ui-btn.style3 {
+    background: none repeat scroll 0 0 #3E9CBF;
+    border: 1px solid #3E9CBF;
     border-radius: 10px;
-    }
+    box-shadow: 0 1px 0 #3E9CBF inset, 0 1px 0 0 #FFFFFF, 0 10px 5px #999999;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Oswald,sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    padding: 8px 14px 10px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    width: 270px;
+}
     /***SET THE BUTTON'S HOVER AND FOCUS STATES***/
     input#bigbutton:hover, input#bigbutton:focus,
 	a#suggestion.style2:hover, a#suggestion.style2:focus,
