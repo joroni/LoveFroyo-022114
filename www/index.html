@@ -437,23 +437,26 @@ shareViaFacebook('Message via Facebook',
 			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
 			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
          <div id="title" style="margin:0 auto; text-align:center; visibility:visible; left: 0;
-    margin-top: 0; max-width: 70%; position: fixed; top: 0;"></div>
+    margin-top: 0; position: fixed; top: 0;"></div>
         
         
         </div>
 		<!-- /header -->
 	
-		<div id="listArticles" style="display:none; margin-top:100px;" data-role="content"><iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="400" width="300"> </iframe>
+		<div id="listArticles" style="display:none; margin-top:100px;" data-role="content"><iframe src="http://m.reisandirvys.com/node/5/comments#viewcomment" seamless height="420" width="320"> </iframe>
         </div><!-- /content -->
-		<div id="navigation">
+		
+        <div id="navigation">
 			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
 			<!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
-			<a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style4 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
+			
+            
+            <a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style4 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
 			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="400" width="300">
+				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="420" width="320" style="width:100%; height:100%;">
 				</iframe>
 			</div>
-			<!-- /popWin1 -->
+			 <!-- /popWin21-->
             
             
             <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="style3 ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Comments</a>
@@ -493,6 +496,8 @@ shareViaFacebook('Message via Facebook',
 				</li>
 				<li class="menu-leaf">
 				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
+                
+               <!-- <a href="#popupWin1" onclick="listShout();" id="btn-shout" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-megaphone size-36"></i></a>-->
 				</li>
 				</li>
 				<li class="menu-leaf">

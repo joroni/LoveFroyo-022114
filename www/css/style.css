@@ -32,7 +32,7 @@ ul#btn-list-header li.ui-btn-inner, ul#btn-list-footer li.ui-btn-inner {
 }*/
 
 iframe {
-	border-radius:5px;
+	border-radius:0px !important;
 	border-style:none;
 }
 
@@ -232,8 +232,7 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 
 
 div#banner img, div#title img {
-/*	margin-top:30px;*/
-	margin: 0 auto;
+	margin-top:30px;
 	max-width:100%;
 }
 
@@ -499,6 +498,16 @@ div#controls {
 }
 
 
+
+div#listArticles {
+	position:fixed;
+	bottom:50px;
+}
+
+div#title {
+	position:fixed;
+	top:0px;
+}
 
 
 /* HTML5 BUTTONS */

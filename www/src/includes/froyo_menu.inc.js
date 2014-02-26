@@ -80,12 +80,13 @@
 			
 			function listShout() {
 					$('#preloader').show('slow');
-				$('#status').show('slow');
-				//$('#social-comments').hide();
-				$('#suggestion').hide();
-				 $('#shout-comments').show('slow');
-				 $('#social_share').hide();
-		
+					$('#status').show('slow');
+					$('#social-comments').hide();
+					$("#listArticles").show('slow');
+					$('#suggestion').hide();
+					$('#shout-comments').show('slow');
+					$('#social_share').hide();
+			
 					node_load(5, {
 							success: function(node) {
 								$('#preloader').fadeOut();
@@ -94,8 +95,11 @@
 					 			$('#social_share').hide();
 								$('#preloader').fadeOut();
 								$('#status').fadeOut();
-								$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
+								$("#contents").html(data);
 								$("#listArticles").show('slow');
+								$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
+							
+								//$("#listArticles").html(data);
 								},
 								error: function(xhr, status, message) {
 								  alert(message)
@@ -177,8 +181,10 @@
 					  $('#social_share').hide();
 					//$("#title").html(node.title);
 						/*$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");*/
-					$('#preloader').fadeOut();
-								  $('#status').fadeOut();
+						$('#preloader').fadeOut();
+						$('#status').fadeOut();
+						$("#listArticles").hide();
+					
 									//$("#contents").html(data);
 					},
 					error: function(xhr, status, message) {
