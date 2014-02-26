@@ -1,5 +1,6 @@
 // SOCIAL PAGE 
 		function listSocial() {
+			$("#listArticles").hide();
 				$('#preloader').show('slow');
 				$('#status').show('slow');
 				$('#shout-comments').hide();
@@ -38,7 +39,7 @@
 		
 		//SHOUT PAGE 
 
-		function listShout() {
+		/*function listShout() {
 					$('#preloader').show('slow');
 				$('#status').show('slow');
 				//$('#social-comments').hide();
@@ -55,7 +56,7 @@
 					 // alert('Loaded node: ' + node.title);
 					 /* $("#title").html('Shout Out!');*/
 					  
-						$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
+					/*	$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
 						$("#comment_link").html("<a href='" + node.path+"'>Comment</a>");
 					},
 					error: function(xhr, status, message) {
@@ -67,15 +68,41 @@
 					node_load(5, {
 								success: function(node) {
 									$('#preloader').fadeOut();
-								  $('#status').fadeOut();
+								  $('#status').fadeOut();*/
 									//$("#contents").html(data);
 								 // alert('Loaded node: ' + node.title);
+							/*	},
+								error: function(xhr, status, message) {
+								  alert(message)
+								}
+							});
+			}*/
+			
+			function listShout() {
+					$('#preloader').show('slow');
+				$('#status').show('slow');
+				//$('#social-comments').hide();
+				$('#suggestion').hide();
+				 $('#shout-comments').show('slow');
+				 $('#social_share').hide();
+		
+					node_load(5, {
+							success: function(node) {
+								$('#preloader').fadeOut();
+						//$('#social-comments').hide();
+					  			$('#status').fadeOut();
+					 			$('#social_share').hide();
+								$('#preloader').fadeOut();
+								$('#status').fadeOut();
+								$("#title").html("<img src='"+Drupal.settings.site_path + node.title+"'/>");
+								$("#listArticles").show('slow');
 								},
 								error: function(xhr, status, message) {
 								  alert(message)
 								}
 							});
 			}
+					
       // END SHOUT PAGE 
 	  
 	 
@@ -83,6 +110,7 @@
 	 
 	 // WHATS PAGE 
 	function listWhats() {
+				$("#listArticles").hide();
 				$('#preloader').show('slow');
 				$('#status').show('slow');
 				$('#social_share').hide();

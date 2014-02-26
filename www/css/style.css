@@ -232,7 +232,8 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 
 
 div#banner img, div#title img {
-	margin-top:30px;
+/*	margin-top:30px;*/
+	margin: 0 auto;
 	max-width:100%;
 }
 
