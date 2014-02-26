@@ -10,7 +10,7 @@
 }
 
 div#navigation {
-	bottom: 3em;
+	bottom: 5em;
     padding: 0 10px;
     position: fixed;
     width: 100%;
@@ -39,11 +39,11 @@ iframe {
 
 
 div#main-menu-holder {
-    left: -2px;
-    padding: 0 !important;
-    position: absolute;
-    top: -6px;
-    width: 100%;
+	left: 0px;
+	padding: 0 !important;
+	position: absolute;
+	top: -11px;
+	width: 100%;
 }
 
 ul#main-menu, ul, menu, dir  {
@@ -171,14 +171,15 @@ ul#main-menu li.menu-leaf a:active {
 }*/
 
 ul#main-menu li.menu-leaf a {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    background: none repeat scroll 0 0 rgba(224, 90, 80, 0) !important;
     border: 0 solid;
     border-radius: 0;
     box-shadow: none !important;
-    color: #380923;
+    /*color: #380923;*/
+	color: rgba(144, 67, 115, 0.9);
     font-family: Arial,Helvetica,sans-serif;
     padding: 10px 30px 10px 0;
-    text-shadow: 1px 1px 0 #929080;
+     text-shadow: 0 1px 0 #FFFFFF;
 }
 
 
@@ -214,7 +215,7 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 }
 
 #footer, .ui-footer {
-    background: url("../img/header-tile.png") repeat-x scroll 0 0 #f76b6b !important;
+    background: url("../img/lf-btn-bg-tile.jpg") repeat-x scroll 0 0 #f76b6b !important;
 	/*background: linear-gradient(to bottom, #FB00F4 0%, #D9009B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;*/
     border-top: 1px solid #febde5 !important;
     bottom: 0 !important;
@@ -231,7 +232,7 @@ div#panel-fixed-page1, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a, .ui-he
 
 
 div#banner img, div#title img {
-	margin-top:70px;
+	margin-top:30px;
 	max-width:100%;
 }
 
@@ -484,7 +485,9 @@ div#controls {
 
 	  .style2 {
      /* color: rgba(56, 61, 80, 0.8) !important;*/
-	  color: rgba(255, 255, 255, 0.8) !important;
+	 /* color: rgba(255, 255, 255, 0.8) !important;*/
+	    color: rgba(144, 67, 115, 0.9) !important
+	  
    /* text-shadow: 0 1px 1px #FFFFFF, 0 0 0 #000000, 0 0 1px #FFFFFF;*/
    text-shadow: 1px 1px 1px #D9009B, 0 0 1px #FFFFFF, 1px -1px 1px #000000;
 }
@@ -538,4 +541,3 @@ div#controls {
     -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
     box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
     }
-
