@@ -604,7 +604,11 @@ a#shout-comments.style3.btn-mini {
  input#bigbutton, a#suggestion.style3, a#social_share.ui-btn.style3, button#social_share.style3, a#shout-comments.ui-btn.style3, button#login.style1 {
     background: none repeat scroll 0 0 #3E9CBF;
     border: 1px solid #3E9CBF;
+<<<<<<< HEAD
     border-radius: 5px;
+=======
+    border-radius: 10px;
+>>>>>>> 55354e1095bbf8ca2520e3be25dea11317de5c67
   box-shadow: 0 1px 0 #3E9CBF inset, 0 1px 0 0 #FFFFFF, 0 3px 4px #555555;
     color: #FFFFFF;
     cursor: pointer;
