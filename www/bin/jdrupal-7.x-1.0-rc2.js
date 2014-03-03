@@ -28,10 +28,10 @@ function drupal_init() {
         }
       },
       debug: false,
-      endpoint: '',
+      endpoint: 'rest',
       file_public_path: 'sites/default/files',
       language_default: 'und',
-      site_path: ''
+      site_path: 'http://m.reisandirvys.com'
     };
     // Includes. Although we no longer dynamically load the includes, we want
     // to place them each in their own JSON object, so we have an easy way to

@@ -19,9 +19,7 @@
 <link rel="stylesheet" type='text/css' href='css/jqm-demos.css'/>
 <link rel='stylesheet' type='text/css' href='css/style.css'/>
 <link rel="stylesheet" type='text/css' href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css"/>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="cordova-incl.js"></script>
-<script type="text/javascript" src="downloader.js"></script>
+
 <link rel='stylesheet' type='text/css' href='http://code.jquery.com/qunit/qunit-1.12.0.css'/>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
@@ -30,11 +28,19 @@
 <!--   <script src="bin/jdrupal.js"></script>-->
 <script src="bin/jdrupal-7.x-1.0-rc2.js"></script>
 <script type="text/javascript" src="js/SocialSharing.js"></script>
+<script type="text/javascript" src="drupalgap.js"></script>
+<script type="text/javascript" src="app/settings.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova-incl.js"></script>
+<script type="text/javascript" src="downloader.js"></script>
+
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
 <!--    <script src="bin/jdrupal.min.js"></script> -->
-<script src="src/base.js"></script>
-<!-- includes to test source code -->
+<!--<script src="src/base.js"></script>
+ includes to test source code -->
 <script src="src/includes/module.inc.js"></script>
+<script src="src/modules/drupalgap.services.taxonomy_term.js"></script>
 <script src="src/includes/froyo_menu.inc.js"></script>
 <script src="src/comment.js"></script>
 <script src="src/drupal.js"></script>
@@ -83,47 +89,26 @@
 		border: 0;
 	}
 </style>
-<!-- jQuery Plugin -->
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>-->
-<!-- Preloader -->
-<script type="text/javascript">
-		//<![CDATA[
-			$(window).load(function() { // makes sure the whole site is loaded
-				$('#status').fadeOut(); // will first fade out the loading animation
-				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-				$('body').delay(350).css({'overflow':'visible'});
-			})
-		//]]>
-	</script>
+
 <script>
-	  function connect(){
-		 $().ready(function() {
-			 
-		 Drupal.settings.site_path = "http://m.reisandirvys.com"; // http://www.example.com
-      // Set the Service Resource endpoint path.
-      Drupal.settings.endpoint = "rest";
-	  $('#site_path').val(Drupal.settings.site_path);
-             $('#endpoint').val(Drupal.settings.endpoint);
-		 });
-	}
-	
-      </script>
-<script>
-	
-	var data = {
-  // currently required
-  "name": "Love Froyo Share",
-  "iconURL": baseurl+"/app-icon/firefox16.png",
-  "icon32URL": baseurl+"/app-icon/firefox32.png",
-  "icon64URL": baseurl+"/app-icon/firefox64.png",
-  "shareURL": baseurl+"/javascript-application"+"/share.html?url=%{url}",
-  // should be available for display purposes
-  "description": "Fat-free Fresh Frozen Yogurt designed by you. Served in 30 seconds in an 8 oz. paper cup. Choose from 2 fro-yo flavors (+ the twist) and 6 toppings. Perfect for high schools, corporate offices, colleges, hospitals. Takes only 24 square feet!",
-  "author": "Reis and Irvy's, Love Froyo",
-  "homepageURL": "http://m.reisandirvys.com/",
-  // optional
-  "version": "1.0"
-}
+
+//// There was ending script anfd opening script tag here
+
+			var baseurl =  Drupal.settings.site_path;
+			var data = {
+		  // currently required
+		  "name": "Love Froyo Share",
+		  "iconURL": baseurl+"/app-icon/firefox16.png",
+		  "icon32URL": baseurl+"/app-icon/firefox32.png",
+		  "icon64URL": baseurl+"/app-icon/firefox64.png",
+		  "shareURL": baseurl+"/javascript-application"+"/share.html?url=%{url}",
+		  // should be available for display purposes
+		  "description": "Fat-free Fresh Frozen Yogurt designed by you. Served in 30 seconds in an 8 oz. paper cup. Choose from 2 fro-yo flavors (+ the twist) and 6 toppings. Perfect for high schools, corporate offices, colleges, hospitals. Takes only 24 square feet!",
+		  "author": "Reis and Irvy's, Love Froyo",
+		  "homepageURL": "http://m.reisandirvys.com/",
+		  // optional
+		  "version": "1.0"
+		}
 
  shareViaTwitter('My message');
 shareViaFacebook('Message via Facebook',
@@ -138,39 +123,223 @@ shareViaFacebook('Message via Facebook',
          console.log('share ok'), */// success callback
         /* function(errormsg){alert(errormsg)})*/ // error callback
 	</script>
+ 
+    
 </head>
-<body onload="connect();">
-<!-- Preloader -->
-<div id="preloader">
-	<div id="status">
-		<!--<img src="img/preloader.gif" width="64" height="64" style="top:50%; left:50%;">-->
-	</div>
-</div>
-<script type="text/javascript">
+<!--<body onload="connect();">-->
+ <body onload="drupalgap_onload();">
 
-	$().ready(function() {
-            // Set the site path (without the trailing slash).
-      Drupal.settings.site_path = "http://m.reisandirvys.com"; // http://www.example.com
-      // Set the Service Resource endpoint path.
-      Drupal.settings.endpoint = "rest";
+<!-- Preloader -->
+<!--<div id="preloader">
+	<div id="status">-->
+		<!--<img src="img/preloader.gif" width="64" height="64" style="top:50%; left:50%;">-->
+<!--	</div>
+</div>-->
+
+
+<div data-url="panel-fixed-page" data-transition="slidefade" data-role="page" class="jqm-demos" id="panel-fixed-page" data-title="Love Froyo">
+	<div data-role="header">
+		<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>-->
+       
+		<!--<h1 id="title">Love Froyo</h1>-->
+	</div>
+	<!-- header -->
+	<div id="navbar" data-role="navbar">
+    
+      <button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
+      
+      
+   <button id="social_facebook"  onclick="window.plugins.socialsharing.shareViaFacebook('#LoveFroyo #FroyoAtBe', null, null, console.log('share ok'), function(errormsg){alert(errormsg)})" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn"  style="display:none;">Facebook</button>
+
+<button id="social_twitter"  onclick="window.plugins.socialsharing.shareViaTwitter('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn"  style="display:none;">Twitter</button>
+
+   
+			<!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
+			
+            
+            <a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
+			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+			<!--	<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="420" width="320" style="width:100%; height:100%; display:block;">
+				</iframe>-->
+			</div>
+			 <!-- /popWin21-->
+            
+            
+            <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-position-to="window" class="style3 btn-mini ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Add Comment</a>
+			<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+            <div data-role="fieldcontain" id="login_name_wrapper" style="display: block;">
+
+		<textarea type="text" id="comment" value="" placeholder="Write a commment"/></textarea>
+		</div>
+            <div class="btn-gui"  style="display: block;">
+				<button type="submit" id="post_comment" style="display: block;">Post</button>
+			</div>
+			 <!-- <iframe src="http://m.reisandirvys.com/comment/reply/5#comment-form" seamless height="300" width="280" style="overflow:hidden;"> </iframe>-->
+			</div>
+		  <!-- /popWin2 -->
+            
+            
+            
+		
+	
+		  <a id="suggestion" href="#popupWin3" onclick="popupWin3();" data-rel="popup" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Suggest a Topping</a>
+			<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+				<!--<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280">
+				</iframe>-->
+			</div>
+			<!-- /popWin3 -->
+            
+            <div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content" style="overflow:hidden;" data-ajax="true">
+				<iframe src="http://m.reisandirvys.com/node/11" seamless height="400" width="300">
+				</iframe>
+			</div>
+            
+    
+    
+    </div><!-- /navbar -->
+    
+    
+   
+	
+	<div id="content" data-role="content" class='content' style="visibility:visible; margin:0 auto; width:auto;">
+		
+        
+        <div data-role="fieldcontain" id="connect_wrapper" style="display: none;">
+			<!--   <label for="site_path">Server</label>-->
+			<input type="text" id="site_path" value="" placeholder="Server URL"/>
+		</div>
+		<div data-role="fieldcontain" id="connect2_wrapper" style="display: none;">
+			<!--<label for="endpoint">Service Name</label>-->
+			<input type="text" id="endpoint" value="" placeholder="Service Name"/>
+		</div>
+		<div data-role="fieldcontain" id="login_name_wrapper" style="display: none;">
+		
+			<input type="text" id="login_name" value="" placeholder="Username"/>
+		</div>
+		<div data-role="fieldcontain" id="login_pass_wrapper" style="display: none;">
+			
+			<input type="password" id="login_pass" placeholder="Password"/>
+		</div>
+		<fieldset>
+			<div class="btn-gui" style="display: block;">
+				<button type="submit" data-role="button" id="go" class="style1" style="display: none;">Hop in</button>
+			</div>
+		
+			<div class="btn-gui">
+				<button type="submit" id="login"  data-role="button"  class="style1" style="display: none;">Login</button>
+			</div>
+			<!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
+			<div class="btn-gui"  style="display: none;">
+				<button type="submit" id="run_tests" style="display: none;">Run Tests</button>
+			</div>
+			<div class="btn-gui"  style="display: none;">
+				<button type="submit" id="run_nodes" style="display: none;">Nodes</button>
+			</div>
+            
+		</fieldset>
+        <div id="sitelogo" style="margin:20px auto; text-align:center; visibility:visible;">
+		<img src="logo.png" style="max-width:60%; margin-top:0px;"/>
+	</div><!-- sitelogo -->
+    
+    <div id="listArticles" data-role="listview" data-ajax="true" style="display:none;">
+		<!--<iframe src="http://m.reisandirvys.com/node/5.json/comment#viewcomment" seamless height="220" width="300"> </iframe>-->
+  <!--      <iframe src="http://www.m.reisandirvys.com/?q=drupalgap/views_datasource/drupalgap_comments" seamless height="220" width="300"> </iframe>-->
+        </div><!-- listArticles -->
+		<!--  <div id="messages">Message</div>
+        <div id="image">Image</div>-->
+		<!--<div id="qunit"></div>
+        <ol id="qunit-tests"></ol>
+        <div id="qunit-fixture"></div>-->
+        
+        
+        
+        
+        
+        
+    
+    
+    	
+    
+    
+    
+    
+    
+    
+	</div>
+	<!-- /content -->
+    
+<div id="footer"  data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e" style="display: none;">
+		<div id="controlgroup" data-role="controlgroup">
+			<ul id="main-menu">
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
+				</li>
+				<li class="menu-leaf">
+				<a href="#panel-fixed-page" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
+                
+               <!-- <a href="#popupWin1" onclick="listShout();" id="btn-shout" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-megaphone size-36"></i></a>-->
+				</li>
+				</li>
+				<li class="menu-leaf">
+				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
+                	
+                  <!--  <a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button"><i class="step style2 fi-star size-36"></i></a>-->
+                	
+			<!-- /popWin4 -->
+				</li>
+                <li class="menu-leaf">
+                
+                 <a href="#nav-panel" id="btn-shout" data-role="button"><i class="step style2 fi-list size-36 "></i></a>
+                
+
+                </li>
+			</ul>
+		</div>
+	</div>
+	<!-- /footer -->
+    
+    
+<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#panel-fixed-page" onclick="listSocial();">Social</a></li>
+			<li><a href="#panel-fixed-page" onclick="listShout();">Shout Out</a></li>
+			<li><a href="#panel-fixed-page" onclick="listWhats();">What's New</a></li>
+			<li><a href="#panel-fixed-page" onclick="listVote();">Vote</a></li>
+			<li><a href="#panel-fixed-page" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
+			<li data-icon="power"><a href="#panel-fixed-page" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
+		</ul>
+	</div>
+	<!-- /panel -->
+</div>
+<!-- /page -->
+
+  <script type="text/javascript">
+ 
+  function deviceIsReady() {
+	  
+      $().ready(function() {
+          
           Drupal.settings.debug = true;
-		function set_drupal_settings() {
-            Drupal.settings.site_path = $('#site_path').val();
-            Drupal.settings.endpoint = $('#endpoint').val();
-          }
+          
           // Set the site path.
+		  
           Drupal.settings.site_path = window.location.href.replace(
-           /* '/sites/all/libraries/jDrupal/',
-            ''*/
-			 '/javascript-application/',
+            '/javascript-application/',
             ''
           ).replace('index.html', '');
-          /*$('#site_path').val(Drupal.settings.site_path);
-		   $('#endpoint').val(Drupal.settings.endpoint);*/
-		  set_drupal_settings();
-           $('#go').on('click', function(){
-             $('#preloader').show('slow');
-		  	$('#status').show('slow'); 
+        
+		  Drupal.settings.site_path = 'http://m.reisandirvys.com';
+		   $('#site_path').val(Drupal.settings.site_path);
+		   
+		     Drupal.settings.endpoint = 'drupalgap';
+		  $('#endpoint').val(Drupal.settings.endpoint);
+          
+         // $('#go').on('click', function(){
+		function connectMe(){
+              set_drupal_settings();
               if (Drupal.settings.site_path == '') {
                 alert('Enter a site path!');
                 return false;
@@ -179,54 +348,33 @@ shareViaFacebook('Message via Facebook',
                 alert('Enter an endpoint path!');
                 return false;
               }
-			/* function Checker(){
-              if (Drupal.settings.site_path == '') {
-                alert('Enter a site path!');
-                return false;
-              }
-              if (Drupal.settings.endpoint == '') {
-                alert('Enter an endpoint path!');
-                return false;
-              }
-			 */
               system_connect({
                   success:function(result){
-					 $('#footer').hide();
-					   $('#preloader').fadeOut();
-					  $('#status').fadeOut();
-					$('#connect_wrapper').hide();
-					 $('#connect2_wrapper').hide();
-                      $('#login_name_wrapper').show('slow');
-                    $('#login_pass_wrapper').show('slow');
-					 $('#login').show('slow');
-					  $('#logout').hide();
+                    
                     if (result.user.uid != 0) {
-					$('#go').hide();
-					$('#login_name_wrapper').hide();
-                    $('#login_pass_wrapper').hide();
-					$('#footer').show('slow');
-					$('#navmenu').show('slow');
-					 $('#login').hide();
-                      $('#logout').show('slow');
-                      $('#go').hide();
-					   $('#run_nodes').hide();
-                      //if (Drupal.user.uid == 0) {
-					if (result.user.uid == 0) {
-					$('#go').show('slow');
-					$('#login').show('slow');
-					$('#logout').hide();
-					$('#footer').hide();
+                     $('#logout').show('slow');
+					 $('#footer').show('slow');
+					//  $('#go').hide();
+					/* $('#footer').show('slow');
+					  if (result.user.uid == 0) {
+         				// $('#footer').hide();
+						$('#login_name_wrapper').show('slow');
+                    	$('#login_pass_wrapper').show('slow');
+					 	$('#login').show('slow');
+					 	$('#footer').hide();
                       }
-                      /*else {
+                      else {
                        // alert('Only user #1 can perform tests, your are user # ' + Drupal.user.uid + '!');
-					    alert('Please Sign in');
-                      }*/
+                     	//	alert ('Please login');
+						$('#footer').hide();
+							// $('#logout').show();
+					  }*/
                     }
                     else {
-						 $('#login_name_wrapper').show('slow');
-                    $('#login_pass_wrapper').show('slow');
-                      $('#login').show('slow');
-                      $('#go').hide();
+						$('#login_name_wrapper').show('slow');
+                    	$('#login_pass_wrapper').show('slow');
+                      	$('#login').show('slow');
+                      	$('#go').hide();
                     }
                   },
                   error:function(xhr, status, message){
@@ -234,24 +382,24 @@ shareViaFacebook('Message via Facebook',
                   }
               });
               return false;
-          });
-		/*};
-           Checker();*/
+       //   });
+         
+		 }
+		 
+		 connectMe();
+		 
+		 
           $('#login').on('click', function(){
               set_drupal_settings();
-			    $('#preloader').show('slow');
-					  $('#status').show('slow');
+			  $('#login').show('slow'); // Raymund
               user_login($('#login_name').val(), $('#login_pass').val(), {
                   success:function(result){
                     alert('Hi, ' + result.user.name + '!');
-                    $('#login').hide();
-					 $('#navmenu').show('slow');
-					    $('#preloader').fadeOut();
-					  $('#status').fadeOut();
-					  $('#login_name_wrapper').hide();
+					 $('#login_name_wrapper').hide();
                     $('#login_pass_wrapper').hide();
+                    $('#login').hide();
                     $('#logout').show('slow');
-                    $('#run_nodes').hide();
+                    $('#run_tests').show('slow');
 					 $('#footer').show('slow');
                   },
                   error:function(xhr, status, message){
@@ -260,31 +408,27 @@ shareViaFacebook('Message via Facebook',
               });
               return false;
           });
+          
           $('#logout').on('click', function(){
-			    $('#preloader').show('slow');
-					  $('#status').show('slow');
               user_logout({
                   success:function(result){
-					    $('#preloader').fadeOut();
-					  $('#status').fadeOut();
                     if (result[0]) {
                        alert("Logged out!");
-					    $('#login_name_wrapper').show('slow');
-                    $('#login_pass_wrapper').show('slow');
                        $('#login').show('slow');
-                       //$('#run_nodes').hide();
+                       $('#run_tests').hide();
                        $('#logout').hide();
                     }
                   }
               });
               return false;
           });
-           set_drupal_settings();
-        /*  function set_drupal_settings() {
+          
+          function set_drupal_settings() {
             Drupal.settings.site_path = $('#site_path').val();
             Drupal.settings.endpoint = $('#endpoint').val();
-          }*/
-         /* $('#run_tests').on('click', function(){
+          }
+          
+          $('#run_tests').on('click', function(){
               if ($('#login_name').val() == '') {
                 alert('Enter your user name to run tests!');
                 return false;
@@ -298,243 +442,41 @@ shareViaFacebook('Message via Facebook',
               // this call iterates through other tests
               test_services_user($('#login_name').val(), $('#login_pass').val());
               return false;
-          });*/
-		   $('#run_nodes').on('click', function(){
-              if ($('#login_name').val() == '') {
-                alert('Enter your user name to run tests!');
-                return false;
-              }
-              if ($('#login_pass').val() == '') {
-                alert('Enter your password to run tests!');
-                return false;
-              }
-              set_drupal_settings();
-              //services_node();
-			   services_term();
-			  //taxonomy_term_load();
-              // this call iterates through other tests
-           // user_load($('#login_name').val(), $('#login_pass').val());
+          });
+		  
+		
+		   $('#post_comment').on('click', function(){
+			   comment = $("#comment").val();
+			    comment_save({
+                  success:function(comment){
+                     if ($('#comment').val() == '') {
+						alert('Please write something');
+						return false;
+                    }
+                  }
+				  
+              });
               return false;
           });
-		  
-		  $('#popClose').on('click', function(){
-             $('#popupWin3-screen').hide();
-              //return false;
-          });
-		  
-		  
-      });
-    </script>
-    <script>
-	
+          
+             //  set_drupal_settings();
+			 /*  comment_save = function(callback) {
+				  test_comment_crud(function() {
+					  if (callback) {
+						callback();
+					  }
+				  });
+				};*/
 
 			  
-	</script>
-<div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Love Froyo">
-	<div data-role="header">
-		<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:none;">Nav-Panel</a>-->
-       
-		<!--<h1 id="title">Love Froyo</h1>-->
-	</div>
-	<!-- header -->
-	<div id="navigation">
-	</div>
-	<div id="sitelogo" style="margin:50px auto; text-align:center; visibility:visible;">
-		<img src="logo.png" style="max-width:60%; margin-top:50px;"/>
-	</div>
-	<div data-role="content" class='content' style="visibility:visible; margin:0 auto; width:300px">
-		<div data-role="fieldcontain" id="connect_wrapper" style="visibility:hidden;">
-			<!--   <label for="site_path">Server</label>-->
-			<input type="text" id="site_path" value="" placeholder="Server URL"/>
-		</div>
-		<div data-role="fieldcontain" id="connect2_wrapper" style="visibility:hidden;">
-			<!--<label for="endpoint">Service Name</label>-->
-			<input type="text" id="endpoint" value="" placeholder="Service Name"/>
-		</div>
-		<div data-role="fieldcontain" id="login_name_wrapper" style="display: none;">
-			<!--  <label for="login_name">Username</label>-->
-			<input type="text" id="login_name" value="" placeholder="Username"/>
-		</div>
-		<div data-role="fieldcontain" id="login_pass_wrapper" style="display: none;">
-			<!--  <label for="login_pass">Password</label>-->
-			<input type="password" id="login_pass" placeholder="Password"/>
-		</div>
-		<fieldset>
-			<div style="margin:0 auto; width:300px; position:fixed; bottom:10%;">
-				<button type="submit" data-role="button" id="go" class="style1" style="visibility:visible;">Hop in</button>
-			</div>
-			<div>
-			<div>
-				<button type="submit" id="login" style="display: none;">Login</button>
-			</div>
-			<!--<div><button type="submit" id="logout" style="display: none;">Logout</button></div>-->
-			<div>
-				<button type="submit" id="run_tests" style="display: none;">Run Tests</button>
-			</div>
-			<div>
-				<button type="submit" id="run_nodes" style="display: none;">Nodes</button>
-			</div>
-		</fieldset>
-		<!--  <div id="messages">Message</div>
-        <div id="image">Image</div>-->
-		<!--<div id="qunit"></div>
-        <ol id="qunit-tests"></ol>
-        <div id="qunit-fixture"></div>-->
-	</div>
-	<!-- /content -->
-	<div data-role="footer" id="footer" style="display: none;">
-		<div id="main-menu-holder">
-			<ul id="main-menu">
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
-				</li>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
-				</li>
-				</li>
-				<li class="menu-leaf">
-				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
-                	
-			<!-- /popWin4 -->
-				</li>
-                <li class="menu-leaf">
-                
-                 <a href="#nav-panel" id="btn-shout" data-role="button"><i class="step style2 fi-list size-36"></i></a>
-                
+			  
+           
+          });
+      
+  }
+  
+  deviceIsReady();
+    </script>
 
-                </li>
-			</ul>
-		</div>
-	</div>
-	<!-- /footer -->
-    
-    
-	<!--<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
-			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
-			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
-		</ul>
-	</div>
-	<!-- /panel -->
-</div>
-<!-- /page -->
-
-
-<!-- Start of social page -->
-
-<div data-url="panel-fixed-page2" data-role="page" class="jqm-demos" id="panel-fixed-page2" data-title="Love Froyo">
-
-<!--<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listSocial();">Social</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listShout();">Shout Out</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listWhats();">What's New</a></li>
-			<li><a href="#panel-fixed-page2" onclick="listVote();">Vote</a></li>
-			<li><a href="#panel-fixed-page2" id="login" onclick="user_login();" style="display:none;">Sign in</a></li>
-			<li data-icon="power"><a href="#panel-fixed-page2" id="logout" onclick="user_logout();" style="display:none;">Logout</a></li>
-		</ul>
-	</div>-->
-	 <!-- panel -->
-	<div data-role="header" data-id="bhead" data-theme="e">
-			<!-- <h1 id="title">Page Title</h1>-->
-			  <!-- <a href="#panel-fixed-page1" data-icon="carat-l" data-rel="back" class="ui-btn ui-btn-inline ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>-->
-              
-			<!--<a href="#nav-panel" id="navmenu" class="ui-btn ui-btn-inline ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" style="display:block !important;">Nav-Panel</a>-->
-			<!-- <a href="#info" data-icon="info" class="ui-btn-right">Info</a>-->
-         <div id="title" style="margin:0 auto; text-align:center; visibility:visible; left: 0;
-    margin-top: 0; position: fixed; top: 0;"></div>
-        
-        
-        </div>
-		<!-- /header -->
-	
-		<div id="listArticles" style="display:none;"><iframe src="http://m.reisandirvys.com/node/5/comment#viewcomment" seamless height="420" width="320"> </iframe>
-        </div><!-- /content -->
-		
-        <div id="navigation">
-			<button id="social_share" onclick="window.plugins.socialsharing.share('#LoveFroyo #FroyoAtBe')" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share!</button>
-			<!--  <a href="#" id="social_share" data-rel="popup" data-icon="heart" onclick="window.plugins.socialsharing.share('My message')" data-position="right" data-position-to="window" class="style3 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline ui-btn" style="display:none;">Share</a>-->
-			
-            
-            <a id="social-comments" href="#popupWin1" onclick="popupWin1();" data-rel="popup" data-position-to="window" class="style4 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Comments</a>
-			<div data-role="popup" id="popupWin1" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/3/comments#viewcomment" seamless height="420" width="320" style="width:100%; height:100%; display:block;">
-				</iframe>
-			</div>
-			 <!-- /popWin21-->
-            
-            
-            <a id="shout-comments" href="#popupWin2" onclick="popupWin2();" data-rel="popup" data-icon="comment" data-position-to="window" class="style3 btn-mini ui-btn ui-corner-all ui-icon-comment ui-mini ui-shadow ui-btn-inline ui-btn-icon ui-btn-icon-left" style="display:none;">Add Comment</a>
-			<div data-role="popup" id="popupWin2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-			  <iframe src="http://m.reisandirvys.com/comment/reply/5#comment-form" seamless height="300" width="300" style="overflow:hidden;"> </iframe>
-			</div>
-		  <!-- /popWin2 -->
-            
-            
-            
-		
-	
-		  <a id="suggestion" href="#popupWin3" onclick="popupWin3();" data-rel="popup" data-icon="edit" data-position-to="window" class="style2 ui-btn ui-corner-all ui-mini ui-shadow ui-btn-inline" style="display:none;">Suggest a Topping</a>
-			<div data-role="popup" id="popupWin3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
-				<iframe src="http://m.reisandirvys.com/node/9" seamless height="200" width="280">
-				</iframe>
-			</div>
-			<!-- /popWin3 -->
-            
-            <div data-role="popup" id="popupWin4" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content" style="overflow:hidden;">
-				<iframe src="http://m.reisandirvys.com/node/11" seamless height="400" width="300">
-				</iframe>
-			</div>
-            
-            
-		</div>
-		<!-- /navigation -->
-		
-		<div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
-			<div data-role="footer" data-position="fixed" data-id="bfoot" class="ui-bar" data-theme="e">
-			<div id="main-menu-holder">
-			<ul id="main-menu">
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listWhats();" id="btn-whats" data-role="button"><i class="step style2 fi-burst-new size-36"></i></a>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listSocial();" id="btn-social" data-role="button"><i class="step style2 fi-torsos-all size-36"></i></a>
-				</li>
-				<li class="menu-leaf">
-				<a href="#panel-fixed-page2" onclick="listShout();" id="btn-shout" data-role="button"><i class="step style2 fi-megaphone size-36"></i></a>
-                
-               <!-- <a href="#popupWin1" onclick="listShout();" id="btn-shout" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-megaphone size-36"></i></a>-->
-				</li>
-				</li>
-				<li class="menu-leaf">
-				<a href="#popupWin4" onclick="listVote();" id="btn-vote" data-role="button" data-rel="popup" data-position-to="window"><i class="step style2 fi-star size-36"></i></a>
-                	
-			<!-- /popWin4 -->
-				</li>
-                <li class="menu-leaf">
-                
-                 <a href="#nav-panel" id="btn-shout" data-role="button"><i class="step style2 fi-list size-36 "></i></a>
-                
-
-                </li>
-			</ul>
-		</div>
-        
-        
-		</div>
-		<!-- /footer -->
-	
-        
-
-    
-	</div>
-	<!-- /page -->
 	</body>
 	</html>

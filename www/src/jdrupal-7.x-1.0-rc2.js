@@ -58,7 +58,7 @@ function drupal_init() {
 
       debug: false,
 
-      endpoint: '',
+      endpoint: 'drupalgap',
 
       file_public_path: 'sites/default/files',
 
